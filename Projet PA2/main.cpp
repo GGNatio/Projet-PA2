@@ -1,26 +1,33 @@
 #include <SFML/Graphics.hpp>
 
-int main() {
-    // Création de la fenêtre
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Fenêtre SFML");
+#include "Player.h"
 
-    // Création d'un cercle
-    sf::CircleShape shape(50); // Rayon de 50 pixels
-    shape.setFillColor(sf::Color::Green);
+
+
+int main() {
+    Player player;
+    // Création de la fenêtre
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Fenêtre SFML");
+    window.setFramerateLimit(60);
+    
+    
 
     // Boucle principale
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
+
             if (event.type == sf::Event::Closed)
-                window.close(); // Fermer la fenêtre
+                window.close();
+            
         }
 
-        // Effacer la fenêtre
+        
         window.clear();
-        // Dessiner la forme
-        window.draw(shape);
-        // Afficher le contenu
+        
+        player.Update(5);
+        player.Draw(window);
+        
         window.display();
     }
 
