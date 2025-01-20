@@ -3,16 +3,16 @@
 void Player::Update(float dT) {
 
 	if (Keyboard::isKeyPressed(Keyboard::Z)) {
-		joueur.move(0, -2);
+		joueur.move(0, -10);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Q)) {
-		joueur.move(-2,0);
+		joueur.move(-10,0);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::S)) {
-		joueur.move(0, 2);
+		joueur.move(0, 10);
 	}
 	if (Keyboard::isKeyPressed(Keyboard::D)) {
-		joueur.move(2,0);
+		joueur.move(10,0);
 	}
 
 }
