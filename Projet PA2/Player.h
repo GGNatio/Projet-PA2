@@ -7,7 +7,8 @@ class Player :public Entity
 {
 
 public:
-
+	float speed = 10;
+	bool keyPossessed = false;
 	RectangleShape joueur;
 
 	Player() {
@@ -18,7 +19,7 @@ public:
 	
 	}
 	
-	
+	void SetSpeed(float x);
 	void Update(float deltaTime)override;
 	void Draw(RenderWindow& window)override;
 

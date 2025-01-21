@@ -3,14 +3,20 @@
 #include "Player.h"
 #include <vector>
 #include "EnnemyManager.h"
+#include "InteractManager.h"
 using namespace std;
 
 
 
 int main() {
+    srand(time(NULL));
     EnnemyManager manager;
-    Player player;
+    InteractManager interactmana;
+
     
+    Player player;
+    interactmana.AddKey(2, &player);
+    interactmana.AddPotion(2, &player);
     manager.AddPatrol(10, &player);
     manager.AddChasing(10, &player);
 
@@ -34,11 +40,13 @@ int main() {
                 window.close();
             
         }
-        manager.UpdateAll(0);
+        
         
         window.clear();
         manager.UpdateAll(5);
+        interactmana.UpdateAll(5);
         player.Update(5);
+        interactmana.DrawAll(window);
         manager.DrawAll(window);
         player.Draw(window);
         
