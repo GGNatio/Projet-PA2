@@ -141,6 +141,7 @@
     <ClCompile Include="InteractManager.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="PatrolEn.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Potion.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Interact.h" />
     <ClInclude Include="InteractManager.h" />
     <ClInclude Include="Key.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="PatrolEn.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />

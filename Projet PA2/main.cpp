@@ -4,23 +4,29 @@
 #include <vector>
 #include "EnnemyManager.h"
 #include "InteractManager.h"
+#include "Map.h"
 using namespace std;
 
 
 
 int main() {
     srand(time(NULL));
+    const float tileSize = 32.0f;
     EnnemyManager manager;
     InteractManager interactmana;
+    Player player;
+    Map map("../map.txt", tileSize, &manager, &player);
+    
 
     
-    Player player;
+   
     interactmana.AddKey(2, &player);
     interactmana.AddPotion(2, &player);
-    manager.AddPatrol(10, &player);
-    manager.AddChasing(10, &player);
+    
+    
+    
 
-    cout << manager.ManagerSize();
+    
 
 
 
@@ -28,7 +34,7 @@ int main() {
     
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Le caca de téva en mieux");
     window.setFramerateLimit(60);
-    
+    map.initialize();
     
 
     
@@ -43,6 +49,7 @@ int main() {
         
         
         window.clear();
+        map.draw(window);
         manager.UpdateAll(5);
         interactmana.UpdateAll(5);
         player.Update(5);

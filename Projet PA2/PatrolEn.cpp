@@ -6,10 +6,10 @@ void Patrol::Update(float dT) {
 
 }
 
-Patrol::Patrol(Player* _p) : Ennemy(_p) {
+Patrol::Patrol(Player* _p, int posx, int posy) : Ennemy(_p), x(posx), y(posy) {
 	patrol.setSize(Vector2f(100.f, 100.f));
 	patrol.setFillColor(Color::Blue);
-	patrol.setPosition(100, 200);
+	patrol.setPosition(x, y);
 
 
 }

@@ -1,15 +1,15 @@
 #include "EnnemyManager.h"
 using namespace std;
-void EnnemyManager::AddPatrol(int nb, Player* p) {
+void EnnemyManager::AddPatrol(int nb, Player* p, int x, int y) {
     for (int i = 0; i < nb; i++) {
-        ennemies.push_back(make_unique<Patrol>(p));
+        ennemies.push_back(make_unique<Patrol>(p,x,y));
     }
     
 }
-void EnnemyManager::AddChasing(int nb, Player* p) {
+void EnnemyManager::AddChasing(int nb, Player* p, int x, int y) {
     for (int i = 0; i < nb; i++) {
 
-        ennemies.push_back(make_unique<Chasing>(p));
+        ennemies.emplace_back(make_unique<Chasing>(p,x,y));
     }
     
 }

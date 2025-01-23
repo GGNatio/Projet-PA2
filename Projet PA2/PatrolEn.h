@@ -8,9 +8,11 @@ class Patrol :public Ennemy
 
 public:
 	float speed = 10.f;
+	int x;
+	int y;
 	RectangleShape patrol;
 	
-	Patrol(Player* _p);
+	Patrol(Player* _p, int posx, int posy);;
 
 	void Deplacer();
 	void Update(float deltaTime)override;

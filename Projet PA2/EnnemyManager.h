@@ -10,7 +10,7 @@ public:
     EnnemyManager() = default;
 
     
-    void AddPatrol(int nb, Player* p);
+    void AddPatrol(int nb, Player* p, int x, int y);
 
     int ManagerSize();
     
@@ -18,7 +18,7 @@ public:
 
     
     void DrawAll(sf::RenderWindow& window);
-    void AddChasing(int nb, Player* p);
+    void AddChasing(int nb, Player* p, int x, int y);
 
 private:
     std::vector<std::unique_ptr<Ennemy>> ennemies;

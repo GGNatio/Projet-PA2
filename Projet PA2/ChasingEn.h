@@ -10,8 +10,9 @@ public:
 	
 	RectangleShape chasing;
 	float speed = 1.f;
-
-	Chasing(Player* _p);
+	int x;
+	int y;
+	Chasing(Player* _p , int posx, int posy);
 
 	void Deplacer(float dT);
 	void Update(float dT);

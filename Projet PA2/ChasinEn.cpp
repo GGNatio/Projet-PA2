@@ -2,10 +2,10 @@
 
 using namespace std;
 
-Chasing::Chasing(Player* _p) : Ennemy(_p) {
+Chasing::Chasing(Player* _p, int posx, int posy) : Ennemy(_p), x(posx), y(posy) {
 	chasing.setSize(Vector2f(100.f, 100.f));
 	chasing.setFillColor(Color::Red);
-	chasing.setPosition(600, 200);
+	chasing.setPosition(x, y);
 
 
 }

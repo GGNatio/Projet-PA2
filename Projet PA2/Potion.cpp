@@ -20,7 +20,7 @@ void Potion::CheckCollision(Player* player) {
 	
 	if (player->joueur.getGlobalBounds().intersects(potion.getGlobalBounds())) {
 		interact(player);
-		delete this;
+		
 	}
 }
 void Potion::Draw(RenderWindow& window) {
